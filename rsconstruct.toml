@@ -1,30 +1,5 @@
 # rsconstruct configuration for this repository — shared defaults plus
 # repo-specific config (merged from the former rsconstruct.local.toml).
 
-# ─── analyzers ───────────────────────────────────────────────────────────────
-
-[analyzer.tera]
-
-[analyzer.markdown]
-
-[analyzer.python]
-
-# ─── templating ──────────────────────────────────────────────────────────────
-
-# Convention: tera configs are Lua (config/*.lua). dep_auto entries are
-# silently skipped where absent. Repos still on config/*.py keep a
-# dep_inputs override in their local overlay until converted.
-[processor.tera]
-dep_auto = [
-	"config/project.lua",
-	"config/personal.lua",
-	"config/version.lua",
-	"config/github.lua",
-	"config/python.lua",
-	"config/shared.lua",
-]
-
-# ─── toml / yaml / json ──────────────────────────────────────────────────────
-
 [processor.taplo]
 src_dirs = ["."]
